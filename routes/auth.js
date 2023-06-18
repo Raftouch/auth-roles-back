@@ -18,6 +18,6 @@ router.post(
 )
 router.post('/login', controller.login)
 // admin, user .. checking different roles here
-router.get('/users', hasRole(['ADMIN']), controller.getUsers)
+router.get('/users', isAuth, hasRole(['ADMIN']), controller.getUsers)
 
 module.exports = router
